@@ -18,11 +18,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"gopkg.in/mgo.v2/bson"
-
-	commonopts "github.com/mongodb/mongo-tools/common/options"
-	md "github.com/mongodb/mongo-tools/mongodump"
-	mdopts "github.com/mongodb/mongo-tools/mongodump/options"
-	mr "github.com/mongodb/mongo-tools/mongorestore"
+	//commonopts "github.com/mongodb/mongo-tools/common/options"
+	//md "github.com/mongodb/mongo-tools/mongodump"
+	//mdopts "github.com/mongodb/mongo-tools/mongodump/options"
+	//mr "github.com/mongodb/mongo-tools/mongorestore"
 )
 
 type envConfig struct {
@@ -34,7 +33,6 @@ type envConfig struct {
 var (
 	prodDb                    = "carts-db"
 	testDb                    = "carts-db-test"
-	testDb2                   = "carts-db-test-2"
 	defaultHost               = "localhost"
 	defaultPort               = "27017"
 	dumpDirAllCollections     = "C:/Users/sara/Desktop/mongoExports/dumpAllCollections"
@@ -116,7 +114,7 @@ func fail(err error, t *testing.T) {
 //------------ Mongo Dump --------------
 
 // getMongoDump returns an initialized MongoDump object.
-func getMongoDump(dbInfo *DatabaseInfo) *md.MongoDump {
+/*func getMongoDump(dbInfo *DatabaseInfo) *md.MongoDump {
 	connection := &commonopts.Connection{
 		Host: dbInfo.host,
 		Port: dbInfo.port,
@@ -164,12 +162,12 @@ func executeMongoDump(dbInfo *DatabaseInfo) error {
 		return err
 	}
 	return nil
-}
+}*/
 
 //------------ Mongo Restore --------------
 
 // getMongoRestore returns an initialized MongoRestore object.
-func getMongoRestore(targetDir string, database string) (*mr.MongoRestore, error) {
+/*func getMongoRestore(targetDir string, database string) (*mr.MongoRestore, error) {
 	args := []string{
 		//mr.DropOption,
 	}
@@ -216,7 +214,7 @@ func executeMongoRestore(dbInfo *DatabaseInfo, targetDir string) error {
 		return err
 	}
 	return nil
-}
+}*/
 
 //------------  --------------
 
